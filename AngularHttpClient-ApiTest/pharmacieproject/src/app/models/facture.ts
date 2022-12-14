@@ -1,4 +1,4 @@
-export class Laboratoire {
+export class facture {
   id_fact?: any;
   Date_fact?: string;
   total_ht ?: string;

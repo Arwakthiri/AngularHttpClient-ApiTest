@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Labo} from '../../models/laboratoire';
+import {Laboratoire} from '../../models/laboratoire';
 import {LaboService} from '../../services/labo.service';
 import {Router} from '@angular/router';
 
@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class AddLaboComponent implements OnInit {
 
-  lab: Labo = new Labo();
+  lab: Laboratoire = new Laboratoire();
   constructor(private labService: LaboService, private route: Router) { }
 
   ngOnInit(): void {
@@ -28,5 +28,6 @@ export class AddLaboComponent implements OnInit {
   console.log(this.lab);
   console.log(this.labService.addLabo(this.lab));
   this.saveLab();
+  this.lablist();
   }
 }

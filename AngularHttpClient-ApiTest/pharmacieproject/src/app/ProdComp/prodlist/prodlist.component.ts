@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Prod} from '../../models/produit.ts';
+import {Produit} from '../../models/produit.ts';
 import {ProdService} from '../../services/prod.service';
 import {Observable} from "rxjs";
 import {Router} from '@angular/router';
@@ -11,7 +11,8 @@ import {error} from "protractor";
   styleUrls: ['./prodlist.component.css']
 })
 export class ProdlistComponent implements OnInit {
-  prods: Prod[];
+
+  prods: Produit[];
 
   constructor(private prodService: ProdService, private route: Router) {
   }
@@ -25,13 +26,18 @@ export class ProdlistComponent implements OnInit {
       this.prods = data;
     })
   }
+  updateprod(id: number) {
+    this.route.navigate(['/updatefour', id]);
+  }
+
+  deleteprod(id: number) {
+    this.prodService.supprimerprod(id).subscribe(data => {
+        this.getlist();
+      }
+    );
+  }
   getlist(){
-    this.route.navigate(['/produits'])
+    this.route.navigate(['/produits']);
   }
-  deleteprod(id:number){
-    this.prodService.delProd(id).subscribe(data=>{
-        this.getlist()
-      }, error => console.log(error)
-    )
-  }
+
 }

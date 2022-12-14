@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Fournisseur} from '../models/fournisseur';
+import {Laboratoire} from "../models/laboratoire";
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,9 @@ export class FourService {
 
   getFour(id: number): Observable<Fournisseur> {
     return this.httpClient.get<Fournisseur>(`${this.baseURL + 'read'}/${id}`);
+  }
+  getFourList(): Observable<Fournisseur[]> {
+    return this.httpClient.get<Fournisseur[]>(`${this.baseURL + 'read'}`);
   }
 
   delFour(id: number): Observable<Fournisseur> {

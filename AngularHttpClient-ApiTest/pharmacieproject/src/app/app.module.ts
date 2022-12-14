@@ -14,6 +14,15 @@ import { LogincompComponent } from './logincomp/logincomp.component';
 import { AddLaboComponent } from './laboComp/add-labo/add-labo.component';
 import { ListLaboComponent } from './laboComp/list-labo/list-labo.component';
 import { UpdateLaboComponent } from './laboComp/update-labo/update-labo.component';
+import { FactureComponent } from './FactComp/addfact/facture/facture.component';
+import { AddfactComponent } from './FactComp/addfact/addfact.component';
+import { AddfamilleComponent } from './FamilleComp/addfamille/addfamille.component';
+import { FamlistComponent } from './FamilleComp/famlist/famlist.component';
+import { UpdatefamComponent } from './FamilleComp/updatefam/updatefam.component';
+import { UtilComponent } from './util/util.component';
+import { AddutilComponent } from './UtilisateurComp/addutil/addutil.component';
+import { UtillistComponent } from './UtilisateurComp/utillist/utillist.component';
+import { UpdateutilComponent } from './UtilisateurComp/updateutil/updateutil.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +36,17 @@ import { UpdateLaboComponent } from './laboComp/update-labo/update-labo.componen
     LogincompComponent,
     AddLaboComponent,
     ListLaboComponent,
-    UpdateLaboComponent
+    UpdateLaboComponent,
+    FactureComponent,
+    AddfactComponent,
+    AddfamilleComponent,
+    FamlistComponent,
+    UpdatefamComponent,
+    UtilComponent,
+    AddutilComponent,
+    UtillistComponent,
+    UpdateutilComponent,
+
   ],
   imports: [
     BrowserModule,

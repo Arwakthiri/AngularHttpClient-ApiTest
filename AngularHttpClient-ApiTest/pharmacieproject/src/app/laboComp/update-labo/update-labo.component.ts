@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Prod} from '../../models/produit.ts';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Labo} from '../../models/laboratoire';
+import {Laboratoire} from '../../models/laboratoire';
 import {LaboService} from '../../services/labo.service';
 
 @Component({
@@ -12,7 +12,7 @@ import {LaboService} from '../../services/labo.service';
 export class UpdateLaboComponent implements OnInit {
 
   id: number;
-  lab: Labo = new Labo();
+  lab: Laboratoire = new Laboratoire();
 
   // tslint:disable-next-line:no-shadowed-variable
   constructor(private ProdService: LaboService, private route: ActivatedRoute, private router: Router) {

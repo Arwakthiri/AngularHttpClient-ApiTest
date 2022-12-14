@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Prod} from "../../models/produit.ts";
+import {Produit} from "../../models/produit.ts";
 import {ProdService} from "../../services/prod.service";
 import {Router} from "@angular/router";
 
@@ -10,8 +10,8 @@ import {Router} from "@angular/router";
 })
 export class AddprodComponent implements OnInit {
 
-  prod: Prod = new Prod();
-  constructor(private prodService:ProdService, private route: Router) { }
+  produit: Produit = new Produit();
+  constructor(private prodService:ProdService , private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,12 +20,12 @@ export class AddprodComponent implements OnInit {
     this.route.navigate(['/produits']);
   }
   saveprod(){
-    this.prodService.ajoutprd(this.prod).subscribe(data=>{
+    this.prodService.ajoutprd(this.produit).subscribe(data=>{
       console.log(data);
     }, error => console.log(error))
   }
   onSubmit(){
-    console.log(this.prod);
+    console.log(this.produit);
     this.saveprod();
     this.prodlist()
   }
